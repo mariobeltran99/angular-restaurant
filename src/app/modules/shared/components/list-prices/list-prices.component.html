@@ -1,0 +1,31 @@
+<div class="justify-center-flex table-flow">
+  <table>
+    <thead class="text-center">
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td>bread</td>
+        <td>1</td>
+        <td>{{ 1.0 | currency: coin:"symbol" }}</td>
+      </tr>
+      <tr *ngFor="let item of list">
+        <td>{{ item.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price | currency: coin:"symbol" }}</td>
+      </tr>
+    </tbody>
+    <tfoot class="text-center">
+      <tr>
+        <td colspan="2"><strong>Amount</strong></td>
+        <td>
+          <strong>{{ priceAmount | currency: coin:"symbol" }}</strong>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

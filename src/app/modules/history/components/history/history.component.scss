@@ -1,0 +1,41 @@
+.card-burger {
+  max-width: 32%;
+  width: 40%;
+}
+.section-flow {
+  max-height: 645px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 20px;
+}
+
+.section-flow::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.section-flow::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+.section-flow::-webkit-scrollbar-button:increment,
+.section-flow::-webkit-scrollbar-button {
+  display: none;
+}
+
+.section-flow::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.section-flow::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+.section-flow::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.text-center {
+  text-align: center;
+}

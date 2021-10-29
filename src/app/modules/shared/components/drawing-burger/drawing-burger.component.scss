@@ -1,0 +1,32 @@
+.space-card {
+  padding-bottom: 50px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.space-card::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.space-card::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+.space-card::-webkit-scrollbar-button:increment,
+.space-card::-webkit-scrollbar-button {
+  display: none;
+}
+
+.space-card::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.space-card::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+.space-card::-webkit-scrollbar-track {
+  border-radius: 10px;
+}

@@ -1,0 +1,42 @@
+$sizes: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20;
+
+@mixin margin-defs($vol) {
+  .margin-#{$vol} {
+    margin: calc(#{$vol} * 4px);
+  }
+  .margin-left-#{$vol} {
+    margin-left: calc(#{$vol} * 4px);
+  }
+  .margin-right-#{$vol} {
+    margin-right: calc(#{$vol} * 4px);
+  }
+  .margin-top-#{$vol} {
+    margin-top: calc(#{$vol} * 4px);
+  }
+  .margin-bottom-#{$vol} {
+    margin-bottom: calc(#{$vol} * 4px);
+  }
+}
+
+@mixin padding-defs($vol) {
+  .padding-#{$vol} {
+    padding: calc(#{$vol} * 4px);
+  }
+  .padding-left-#{$vol} {
+    padding-left: calc(#{$vol} * 4px);
+  }
+  .padding-right-#{$vol} {
+    padding-right: calc(#{$vol} * 4px);
+  }
+  .padding-top-#{$vol} {
+    padding-top: calc(#{$vol} * 4px);
+  }
+  .padding-bottom-#{$vol} {
+    padding-bottom: calc(#{$vol} * 4px);
+  }
+}
+
+@each $size in $sizes {
+  @include margin-defs($size);
+  @include padding-defs($size);
+}

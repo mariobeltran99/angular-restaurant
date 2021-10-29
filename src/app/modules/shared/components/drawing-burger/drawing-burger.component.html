@@ -1,0 +1,41 @@
+<div class="space-card">
+  <div class="row">
+    <div class="col-12">
+      <bread class="justify-center-flex"></bread>
+    </div>
+  </div>
+  <div *ngFor="let item of ingredients">
+    <div class="row">
+      <div class="col-12">
+        <div [ngSwitch]="item">
+          <div *ngSwitchCase="'pickles'">
+            <pickles class="justify-center-flex"></pickles>
+          </div>
+          <div *ngSwitchCase="'sausage'">
+            <sausage class="justify-center-flex"></sausage>
+          </div>
+          <div *ngSwitchCase="'cheese'">
+            <cheese class="justify-center-flex"></cheese>
+          </div>
+          <div *ngSwitchCase="'salad'">
+            <salad class="justify-center-flex"></salad>
+          </div>
+          <div *ngSwitchCase="'bacon'">
+            <bacon class="justify-center-flex"></bacon>
+          </div>
+          <div *ngSwitchCase="'tomatoes'">
+            <tomatoes class="justify-center-flex"></tomatoes>
+          </div>
+          <div *ngSwitchCase="'meat'">
+            <meat class="justify-center-flex"></meat>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <bread class="justify-center-flex" [reverse]="true"></bread>
+    </div>
+  </div>
+</div>

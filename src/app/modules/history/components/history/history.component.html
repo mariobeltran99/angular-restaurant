@@ -1,0 +1,21 @@
+<div class="content">
+  <div class="section-flow">
+    <div class="row flex-gap flex-wrap">
+      <div *ngIf="burgers.length > 0; else elseBlock">
+        <ng-template *ngFor="let item of burgers; index as i" [ngIf]="true">
+          <card-burger
+            class="card-burger"
+            [burger]="item"
+            [index]="i"
+            [array]="burgers"
+            (out)="burgers = $event"
+          ></card-burger>
+        </ng-template>
+      </div>
+      <ng-template #elseBlock>
+        <h1 class="row justify-center-flex">No Burgers!</h1>
+        <i class="fal fa-sad-tear fa-7x row justify-center-flex"></i>
+      </ng-template>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<card class="card-burger">
+  <div class="row">
+    <div class="col-12">
+      <p class="heading">{{ burger.name }}</p>
+    </div>
+  </div>
+  <hr />
+  <div class="row detail">
+    <div class="col-12">
+      <span>Currency: {{ burger.currency }} </span>
+    </div>
+  </div>
+  <div class="row detail">
+    <div class="col-12">
+      <span
+        >Price: {{ burger.price | currency: burger.currency:"symbol" }}</span
+      >
+    </div>
+  </div>
+  <div class="actions">
+    <div class="row flex-wrap-reverse justify-center-flex">
+      <div class="col-4 space-row">
+        <button
+          class="btn primary element-space"
+          [routerLink]="['details/', burger.id]"
+        >
+          <i class="fal fa-eye"></i> Show
+        </button>
+      </div>
+      <div class="col-4 space-row">
+        <button
+          class="btn warning element-space"
+          [routerLink]="['/edit/', burger.id]"
+        >
+          <i class="fal fa-edit"></i> Edition
+        </button>
+      </div>
+      <div class="col-4 space-row">
+        <button class="btn danger element-space" (click)="openModal()">
+          <i class="fal fa-trash-alt"></i> Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</card>
+<modal #modal>
+  <h3 class="heading">You want to remove the hamburger?</h3>
+  <div class="row flex-gap">
+    <div class="col-6 space-row">
+      <button
+        class="btn success modal-element"
+        (click)="deleteBurger(burger.id)"
+      >
+        <i class="fal fa-check-circle"></i> Accept
+      </button>
+    </div>
+    <div class="col-6 space-row">
+      <button class="btn danger modal-element" (click)="closeModal()">
+        <i class="fal fa-times-circle"></i> Cancel
+      </button>
+    </div>
+  </div>
+</modal>

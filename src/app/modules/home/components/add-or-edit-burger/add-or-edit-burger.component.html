@@ -1,0 +1,98 @@
+<div class="content">
+  <div class="row flex-gap">
+    <div class="col-7">
+      <card>
+        <div *ngIf="id !== undefined; else elseBlock">
+          <h3 class="heading">
+            Update your burger
+            <hr />
+          </h3>
+        </div>
+        <ng-template #elseBlock>
+          <h3 class="heading">
+            Create your burger
+            <hr />
+          </h3>
+        </ng-template>
+        <div class="row">
+          <div class="col-6">
+            <drawing-burger [ingredients]="arrayIngredients"></drawing-burger>
+          </div>
+          <div class="col-6">
+            <h3 class="heading">
+              Select your favorite ingredient
+              <hr />
+              <add-ingredient
+                [ingredients]="arrayIngredients"
+                (sendIngredients)="arrayIngredients = $event"
+                (sendBills)="arrayBills = $event"
+                (price)="total = $event"
+              ></add-ingredient>
+            </h3>
+          </div>
+        </div>
+      </card>
+    </div>
+    <div class="col-5">
+      <card>
+        <h3 class="heading">
+          Burger Bill
+          <hr />
+        </h3>
+        <list-prices
+          [listBills]="arrayBills"
+          [coin]="money"
+          [price]="total"
+        ></list-prices>
+        <form [formGroup]="burgerForm" class="form-unit">
+          <h4>Select your coin</h4>
+          <select
+            class="form-select"
+            formControlName="coin"
+            (change)="onChangeCoins()"
+          >
+            <option *ngFor="let item of coins" value="{{ item }}">
+              {{ item }}
+            </option>
+          </select>
+          <input
+            type="text"
+            class="form-control element-space manage-size"
+            formControlName="name"
+            placeholder="Burger name..."
+          />
+          <span *ngIf="isFieldValid('name')" class="error-hint"
+            ><i class="fal fa-exclamation-circle"></i> {{ errorMessage1 }}</span
+          >
+          <div *ngIf="id !== undefined; else elseBlock1">
+            <button
+              class="btn success element-space"
+              [disabled]="!burgerForm.valid"
+              type="button"
+              (click)="addBurgerOrEdit()"
+            >
+              <i class="fal fa-sync"></i> Update Burger
+            </button>
+            <button
+              class="btn danger element-space"
+              type="button"
+              [routerLink]="['/history/details/', id]"
+            >
+              <i class="fal fa-times-circle"></i> Cancel
+            </button>
+          </div>
+          <ng-template #elseBlock1>
+            <button
+              class="btn primary element-space"
+              [disabled]="!burgerForm.valid"
+              type="button"
+              (click)="addBurgerOrEdit()"
+            >
+              <i class="fal fa-plus-circle"></i> Add Burger
+            </button>
+          </ng-template>
+        </form>
+      </card>
+    </div>
+  </div>
+</div>

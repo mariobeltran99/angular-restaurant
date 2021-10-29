@@ -1,0 +1,59 @@
+.heading {
+  padding: 15px;
+}
+
+hr {
+  margin: 0px, 10px;
+  padding: 0px;
+  border: 1px solid #ddd;
+}
+.form-unit {
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 50px;
+}
+
+.element-space {
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+span,
+.error-hint {
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  color: #7d1935;
+}
+
+@media screen and (min-width: 320px) {
+  .manage-size {
+    width: 89%;
+  }
+}
+@media screen and (min-width: 375px) {
+  .manage-size {
+    width: 91.3%;
+  }
+}
+@media screen and (min-width: 425px) {
+  .manage-size {
+    width: 92.5%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .manage-size {
+    width: 96%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .manage-size {
+    width: 93%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .manage-size {
+    width: 94.5%;
+  }
+}

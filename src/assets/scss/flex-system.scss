@@ -1,0 +1,98 @@
+$cols: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+
+@mixin big-columns-def($col) {
+  .col-#{$col} {
+    width: calc((1 / (12 / #{$col})) * 100%);
+  }
+}
+@mixin small-columns-def($col) {
+  .col-#{$col} {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  @each $col in $cols {
+    @include small-columns-def($col);
+  }
+  .row {
+    display: block;
+    width: 100%;
+  }
+  .content {
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .content {
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .content {
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  @each $col in $cols {
+    @include big-columns-def($col);
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex: auto;
+    width: 100%;
+  }
+
+  .content {
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .content {
+    margin-top: 40px;
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+
+.justify-center-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.justify-center-item {
+  justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.flex-gap {
+  gap: 10px 10px;
+}
